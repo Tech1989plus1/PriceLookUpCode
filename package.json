@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"react-dev": "webpack --watch -d",
-	"build": "webpack --config webpack.prod.js",
-	"react-sev": "nodemon ./server/index.js",
-	"start": "node ./server/index.js"
+    "react-dev": "webpack --watch -d",
+    "build": "webpack --config webpack.prod.js",
+    "react-sev": "nodemon ./server/index.js",
+    "start": "node ./server/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,9 @@
     "babel-loader": "^8.0.6",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
   }
 }

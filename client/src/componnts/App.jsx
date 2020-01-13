@@ -6,8 +6,12 @@ class App extends React.Component{
     super(props);
 
     this.state = {
-
     }
+    this.search = this.search.bind(this);
+  }
+
+  search(item){
+    console.log(item);
   }
 
   componentDidMount() {
@@ -17,7 +21,7 @@ class App extends React.Component{
   render() {
     return(
       <div>
-        <Title title={'Plu.Bakery.Orange'} search={this.state}/>
+        <Title title={'Plu.Bakery.Orange'} searchCB={this.search}/>
       </div>);
   }
 }

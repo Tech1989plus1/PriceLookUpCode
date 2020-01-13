@@ -1,4 +1,7 @@
 import React from 'react';
+import Title from './Title.jsx';
+
+const Div = window.styled.div``;
 
 class App extends React.Component{
   constructor(props){
@@ -15,9 +18,9 @@ class App extends React.Component{
 
   render() {
     return(
-      <div>
-        <h1>Hello</h1>
-      </div>);
+      <Div>
+        <Title title={'Plu.Bakery.Orange'} search={this.state}/>
+      </Div>);
   }
 }
 

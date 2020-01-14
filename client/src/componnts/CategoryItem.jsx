@@ -2,9 +2,7 @@ import React from 'react';
 
 const CategoryItem = ({ item }) => {
   return(
-    <div className="">
-      {console.log(item)}
-    </div>
+    <li className="group">Name: {item.name} Plu: {item.plu} Des.: {item.description}</li>
   );
 };
 

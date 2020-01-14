@@ -5,9 +5,11 @@ const CategoryView = ({ department, items }) => {
   return(
     <div className="categoryContainer">
       <h3>{department}</h3>
-      {items.map((item, key) => 
-        <CategoryItem item={item} key={key}/>
-      )}
+      <ul className="listGroup">
+        {items.map((item, key) => 
+          <CategoryItem item={item} key={key}/>
+        )}
+      </ul>
     </div>
   );
 };

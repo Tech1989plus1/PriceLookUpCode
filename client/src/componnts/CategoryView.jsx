@@ -2,8 +2,8 @@ import React from 'react';
 
 const CategoryView = ({ department }) => {
   return(
-    <div className="">
-      <h1>{ department }</h1>
+    <div className="categoryContainer">
+      <h3>{department}</h3>
     </div>
   );
 };

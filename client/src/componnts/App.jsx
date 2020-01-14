@@ -33,8 +33,16 @@ class App extends React.Component{
     
     if (view === 'category') {
       return ( <Category categorycb={this.category}/> );
-    } else if (view === '') {
-
+    } else if (view === 'produce') {
+      return ();
+    } else if (view === 'bulk') {
+      return ();
+    } else if (view === 'bakery') {
+      return ();
+    } else if (view === 'culinary') {
+      return ();
+    } else {
+      return ( <Category categorycb={this.category}/> );
     }
   }
 

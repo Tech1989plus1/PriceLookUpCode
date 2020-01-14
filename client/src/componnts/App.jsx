@@ -11,7 +11,8 @@ class App extends React.Component{
 
     this.state = {
       view: 'category',
-      recent: []
+      recent: [],
+      departmentItem: [],
     }
     this.search = this.search.bind(this);
     this.category = this.category.bind(this);
@@ -26,16 +27,29 @@ class App extends React.Component{
   }
 
   category(view){
-    this.setState({view: view});
+
+    if (view === 'category') {
+      this.setState({view: view});
+    } else {
+      ajax({
+        method: 'GET',
+        url: `/api/department/${view}`,
+        error: (err) => console.error(err),
+        success: ({ view, data }) => {
+          this.setState({ view: view, departmentItem: data });
+        }
+      });
+    }
+    
   }
 
   renderView(){
-    const { view } = this.state;
-    
+    const { view, departmentItem } = this.state;
+
     if (view === 'category') {
       return ( <Category categorycb={this.category}/> );
     } else if (view !== 'category' && view.length !== 0) {
-      return (<CategoryView department={view}/>);
+      return (<CategoryView department={view} items={departmentItem}/>);
     } else {
       return ( <Category categorycb={this.category}/> );
     }
@@ -45,7 +59,7 @@ class App extends React.Component{
   componentDidMount(){
     ajax({
       method: 'GET',
-      url: '/plu',
+      url: '/api/recent',
       error: (err) => console.error(err),
       success: (data) => {
         this.setState({recent: data.slice(0,4)});

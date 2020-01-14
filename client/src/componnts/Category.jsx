@@ -19,12 +19,12 @@ class Category extends React.Component {
         <form onClick={this.handleClick}>
             <div className="categoryColumn">
               <div className="categoryRow">
-                <h3 id="Produce">Produce</h3>
-                <h3 id="Bulk">Bulk</h3>
+                <h3 id="produce">Produce</h3>
+                <h3 id="bulk">Bulk</h3>
               </div>
               <div className="categoryRow">
-                <h3 id="Bakery">Bakery</h3>
-                <h3 id="Culinary">Culinary</h3>
+                <h3 id="bakery">Bakery</h3>
+                <h3 id="culinary">Culinary</h3>
               </div>
             </div>
         </form>

@@ -3,7 +3,7 @@ import { ajax } from 'jquery';
 import Title from './Title.jsx';
 import Recent from './Recent.jsx';
 import Category from './Category.jsx';
-
+import CategoryView from './CategoryView.jsx';
 
 class App extends React.Component{
   constructor(props){
@@ -14,6 +14,7 @@ class App extends React.Component{
       recent: []
     }
     this.search = this.search.bind(this);
+    this.category = this.category.bind(this);
   }
 
   search(item){
@@ -25,7 +26,7 @@ class App extends React.Component{
   }
 
   category(view){
-    console.log(view);
+    this.setState({view: view});
   }
 
   renderView(){
@@ -33,17 +34,12 @@ class App extends React.Component{
     
     if (view === 'category') {
       return ( <Category categorycb={this.category}/> );
-    } else if (view === 'produce') {
-      return ();
-    } else if (view === 'bulk') {
-      return ();
-    } else if (view === 'bakery') {
-      return ();
-    } else if (view === 'culinary') {
-      return ();
+    } else if (view !== 'category' && view.length !== 0) {
+      return (<CategoryView department={view}/>);
     } else {
       return ( <Category categorycb={this.category}/> );
     }
+
   }
 
   componentDidMount(){

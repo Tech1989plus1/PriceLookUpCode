@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.categoryContainer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  width: 100%;
+}
+
+.categoryColumn {
+  display: flex;
+  font-size: 15px;
+  flex-flow: column;
+}
+
+.categoryRow {
+  display: flex;
+  flex-flow: row;
+  flex: 1 275px;
+  margin-left: 17%;
+  margin-right: 17%;
+}
+
+#produce {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 25px;
+  border: 3px solid #ccc;
+  background-color: cadetblue;
+}
+
+#produce:hover {
+  border: 3px solid #777;
+}
+
+#bulk {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 25px;
+  border: 3px solid #ccc;
+  background-color: burlywood;
+}
+
+#bulk:hover {
+  border: 3px solid #777;
+}
+
+#bakery {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 25px;
+  border: 3px solid #ccc;
+  background-color: firebrick
+}
+
+#bakery:hover {
+  border: 3px solid #777;
+}
+
+#culinary {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 25px;
+  border: 3px solid #ccc;
+  background-color: darkorange;
+}
+
+#culinary:hover {
+  border: 3px solid #777;
+}

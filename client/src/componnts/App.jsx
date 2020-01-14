@@ -2,6 +2,7 @@ import React from 'react';
 import { ajax } from 'jquery';
 import Title from './Title.jsx';
 import Recent from './Recent.jsx';
+import Category from './Category.jsx';
 
 
 class App extends React.Component{
@@ -9,7 +10,7 @@ class App extends React.Component{
     super(props);
 
     this.state = {
-      view: 'home',
+      view: 'category',
       recent: []
     }
     this.search = this.search.bind(this);
@@ -19,13 +20,21 @@ class App extends React.Component{
     console.log(item);
   }
 
+  uniqueIdentifier(uid){
+    console.log(uid);
+  }
+
+  category(view){
+    console.log(view);
+  }
+
   renderView(){
     const { view } = this.state;
     
-    if (view === 'home') {
-      return (
-        <Recent recent={this.state.recent}/>
-      );
+    if (view === 'category') {
+      return ( <Category categorycb={this.category}/> );
+    } else if (view === '') {
+
     }
   }
 
@@ -35,7 +44,7 @@ class App extends React.Component{
       url: '/plu',
       error: (err) => console.error(err),
       success: (data) => {
-        this.setState({recent: data});
+        this.setState({recent: data.slice(0,4)});
       }
     });
   }
@@ -43,8 +52,9 @@ class App extends React.Component{
   render() {
     return(
       <div>
-        <Title title={'Plu.Bakery.Orange'} searchCB={this.search}/>
-        <div className='container-body'>
+        <Title title={'Plu'} searchCB={this.search} categorycb={this.category}/>
+        <div className="containerBody">
+          <Recent recent={this.state.recent} uidcb={this.uniqueIdentifier}/>
           {this.renderView()}
         </div>
       </div>);

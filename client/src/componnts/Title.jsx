@@ -8,6 +8,7 @@ class Title extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(event) {
@@ -23,11 +24,18 @@ class Title extends React.Component {
 
     event.preventDefault();
   }
+
+  handleClick(event){
+    const { id } = event.target;
+    const { categorycb } = this.props;
+    categorycb(id);
+  };
+
   
   render() {
     return(
     <div className='topnav'>
-      <a className="active" href="#home">{this.props.title}</a>
+      <a className="active" id="category" onClick={this.handleClick}>{this.props.title}</a>
       <form className="search-container">
         <input type="text" placeholder="Search..." name="search" value={this.state.value} onChange={this.handleChange}/>
         <button type="submit" onClick={this.handleSubmit}><i className="fa fa-search"></i></button>
